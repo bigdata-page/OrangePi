@@ -1,0 +1,11 @@
+src=$(wildcard *.c)
+objs=$(src:.c=.o)
+libs=-lwiringPi
+
+main:$(objs)
+	gcc $^ $(libs) -o $@ 
+
+clean:
+	-rm -f main
+	-rm -f *o
+	-rm -f *~
